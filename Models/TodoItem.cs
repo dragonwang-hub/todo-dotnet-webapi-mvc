@@ -18,5 +18,7 @@ namespace TodoApi.Models
         public bool IsCompleted { get; set; }
 
         public DateOnly? Expiration { get; set; }
+
+        public string? Secret { get; set; }
     }
 }

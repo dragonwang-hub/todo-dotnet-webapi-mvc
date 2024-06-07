@@ -27,19 +27,19 @@ namespace TodoApi.Repositories
             return await _context.TodoItems.FindAsync(id);
         }
 
-        public async void InsertAsync(TodoItem todoItem)
+        public async Task InsertAsync(TodoItem todoItem)
         {
             _context.TodoItems.Add(todoItem);
             await _context.SaveChangesAsync();
         }
 
-        public async void DeleteAsync(TodoItem todoItem)
+        public async Task DeleteAsync(TodoItem todoItem)
         {
             _context.TodoItems.Remove(todoItem);
             await _context.SaveChangesAsync();
         }
 
-        public async void UpdateAsync(TodoItem todoItem)
+        public async Task UpdateAsync(TodoItem todoItem)
         {
             _context.Entry(todoItem).State = EntityState.Modified;
             await _context.SaveChangesAsync();
