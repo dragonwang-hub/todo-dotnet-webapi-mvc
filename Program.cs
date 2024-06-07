@@ -22,4 +22,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.MapGet("/", () => @"TodoApi management API. Navigate to /swagger to open the Swagger test UI.");
+
 app.Run();
