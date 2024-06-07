@@ -19,12 +19,12 @@ namespace TodoApi.Repositories
 
         public async Task<IEnumerable<TodoItem>> GetAllAsync()
         {
-            return await _context.TodoItems.ToListAsync();
+            return await _context.TodoItems.AsNoTracking().ToListAsync();
         }
 
         public async Task<TodoItem> GetByIdAsync(long id)
         {
-            return await _context.TodoItems.FindAsync(id);
+            return await _context.TodoItems.AsNoTracking().SingleOrDefaultAsync(item => id == item.Id);
         }
 
         public async Task InsertAsync(TodoItem todoItem)
