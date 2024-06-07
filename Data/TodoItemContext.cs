@@ -5,7 +5,7 @@ namespace TodoApi.Data
 {
     public class TodoItemContext : DbContext
     {
-        public TodoItemContext(DbContextOption<TodoItemContext> options) : base(options)
+        public TodoItemContext(DbContextOptions<TodoItemContext> options) : base(options)
         {
         }
 
